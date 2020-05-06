@@ -1,7 +1,7 @@
-package ioccontainer;
+package com.liyong.ioccontainer;
 
-import ioccontainer.entity.Book;
-import ioccontainer.entity.User;
+import com.liyong.ioccontainer.entity.Book;
+import com.liyong.ioccontainer.entity.User;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 /**

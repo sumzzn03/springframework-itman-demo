@@ -1,18 +1,18 @@
-package ioccontainer.entity;
+package com.liyong.ioccontainer.entity;
 /**
  *@author <a href="http://youngitman.tech">青年IT男</a>
  *@version v1.0.0
- *@className Book
+ *@className User
  *@description
  *@JunitTest: {@link  } 
- *@date 2020-05-06 21:36    
+ *@date 2020-05-06 21:34    
  *
  *
 **/
-public class Book {
-    private Long id;
-    private Integer price;
+public class User {
     private String name;
+    private Integer age;
+    private Long id;
 
     public Long getId() {
         return id;
@@ -20,14 +20,6 @@ public class Book {
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public Integer getPrice() {
-        return price;
-    }
-
-    public void setPrice(Integer price) {
-        this.price = price;
     }
 
     public String getName() {
@@ -38,12 +30,20 @@ public class Book {
         this.name = name;
     }
 
+    public Integer getAge() {
+        return age;
+    }
+
+    public void setAge(Integer age) {
+        this.age = age;
+    }
+
     @Override
     public String toString() {
-        return "Book{" +
-                "id=" + id +
-                ", price=" + price +
-                ", name='" + name + '\'' +
+        return "User{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                ", id=" + id +
                 '}';
     }
 }

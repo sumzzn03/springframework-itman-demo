@@ -1,7 +1,7 @@
-package ioccontainer;
+package com.liyong.ioccontainer;
 
 
-import ioccontainer.entity.Book;
+import com.liyong.ioccontainer.entity.Book;
 import org.springframework.beans.factory.annotation.Autowired;
 
 /**

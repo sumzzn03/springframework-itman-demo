@@ -1,19 +1,21 @@
-package ioccontainer;
+package com.liyong.ioccontainer;
 
 
-import ioccontainer.entity.Book;
+import com.liyong.ioccontainer.entity.Book;
 
 /**
  *@author <a href="http://youngitman.tech">青年IT男</a>
  *@version v1.0.0
- *@className IBookManager
+ *@className IBookService
  *@description
  *@JunitTest: {@link  } 
- *@date 2020-05-06 21:57    
+ *@date 2020-05-06 21:37    
  *
  *
 **/
-public interface IBookManagerService {
+public interface IBookService {
+
+    Book findById(Long id);
 
     void save(Book book);
 

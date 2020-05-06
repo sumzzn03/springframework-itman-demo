@@ -1,8 +1,8 @@
-package ioccontainer;
+package com.liyong.ioccontainer;
 
 
-import ioccontainer.entity.Book;
-import ioccontainer.entity.User;
+import com.liyong.ioccontainer.entity.Book;
+import com.liyong.ioccontainer.entity.User;
 
 /**
  *@author <a href="http://youngitman.tech">青年IT男</a>
