@@ -1,7 +1,7 @@
-package org.example.spring.container;
+package ioccontainer;
 
-import org.example.spring.container.entity.Book;
-import org.example.spring.container.entity.User;
+import ioccontainer.entity.Book;
+import ioccontainer.entity.User;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 /**

@@ -1,4 +1,4 @@
-package org.example.spring.container.entity;
+package ioccontainer.entity;
 /**
  *@author <a href="http://youngitman.tech">青年IT男</a>
  *@version v1.0.0

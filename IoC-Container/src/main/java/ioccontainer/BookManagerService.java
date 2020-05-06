@@ -1,6 +1,7 @@
-package org.example.spring.container;
+package ioccontainer;
 
-import org.example.spring.container.entity.Book;
+
+import ioccontainer.entity.Book;
 import org.springframework.beans.factory.annotation.Autowired;
 
 /**

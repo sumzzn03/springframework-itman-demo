@@ -1,6 +1,7 @@
-package org.example.spring.container;
+package ioccontainer;
 
-import org.example.spring.container.entity.Book;
+
+import ioccontainer.entity.Book;
 
 /**
  *@author <a href="http://youngitman.tech">青年IT男</a>
