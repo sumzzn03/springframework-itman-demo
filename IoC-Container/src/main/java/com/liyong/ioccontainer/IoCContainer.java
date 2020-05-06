@@ -8,7 +8,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
  * @author <a href="http://youngitman.tech">青年IT男</a>
  * @version v1.0.0
  * @className IoCContainer
- * @description 启动类
+ * @description 通过AnnotationConfigApplicationContext启动容器
  * @JunitTest: {@link  }
  * @date 2020-05-06 21:28
  **/
