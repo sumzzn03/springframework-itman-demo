@@ -8,7 +8,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
  * @author <a href="http://youngitman.tech">青年IT男</a>
  * @version v1.0.0
  * @className IoCContainer
- * @description
+ * @description 启动类
  * @JunitTest: {@link  }
  * @date 2020-05-06 21:28
  **/
@@ -17,6 +17,7 @@ public class IoCContainer {
 
         AnnotationConfigApplicationContext annotationConfigApplicationContext = new AnnotationConfigApplicationContext();
 
+        //注册bean到容器中
         annotationConfigApplicationContext.register(IoCContainer.class);
 
         annotationConfigApplicationContext.register(UserService.class);
