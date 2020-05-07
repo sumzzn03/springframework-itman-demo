@@ -52,6 +52,8 @@ public class IoCContainer {
         book2.setId(2L);
         bookManagerService.save(book2);
 
+
+
         // 显示地关闭 Spring 应用上下文
         annotationConfigApplicationContext.close();
 

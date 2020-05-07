@@ -28,7 +28,7 @@ import org.springframework.beans.factory.xml.XmlBeanDefinitionReader;
  *@date 12:22 AM 2020/5/7
  *
 **/
-public class XmlIocContainer {
+public class ImportXmlIocContainer {
 
     public static void main(String[] args) {
 
@@ -41,11 +41,10 @@ public class XmlIocContainer {
         // 加载 XML 资源，解析并且生成 BeanDefinition
         beanDefinitionReader.loadBeanDefinitions(xmlResourcePath);
 
-        // 依赖查找并且创建 Bean
-        ConfigruationService configruationService = beanFactory.getBean(ConfigruationService.class);
+        //通过import导入bean定义
+        IOtherService otherService = beanFactory.getBean(IOtherService.class);
 
-
-        System.out.println(configruationService.configruation());
+        otherService.save("hello spring");
 
     }
 }

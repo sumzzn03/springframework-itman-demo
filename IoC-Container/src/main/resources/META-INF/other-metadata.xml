@@ -4,12 +4,8 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
         https://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <!--导入其他bean配置-->
-    <import resource="other-metadata.xml"/>
-
-    <bean id="configruationService" class="com.liyong.ioccontainer.ConfigruationService">
+    <bean id="otherService" class="com.liyong.ioccontainer.OtherService">
 
     </bean>
-
 
 </beans>
