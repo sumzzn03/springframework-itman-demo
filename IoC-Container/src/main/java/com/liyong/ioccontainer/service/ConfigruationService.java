@@ -1,4 +1,4 @@
-package com.liyong.ioccontainer;
+package com.liyong.ioccontainer.service;
 /**
  *@author <a href="http://youngitman.tech">青年IT男</a>
  *@version v1.0.0

@@ -14,8 +14,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.liyong.ioccontainer;
+package com.liyong.ioccontainer.starter;
 
+import com.liyong.ioccontainer.service.ConfigruationService;
 import org.springframework.beans.factory.support.DefaultListableBeanFactory;
 import org.springframework.beans.factory.xml.XmlBeanDefinitionReader;
 
@@ -28,7 +29,7 @@ import org.springframework.beans.factory.xml.XmlBeanDefinitionReader;
  *@date 12:22 AM 2020/5/7
  *
 **/
-public class ImportXmlIocContainer {
+public class XmlIocContainer {
 
     public static void main(String[] args) {
 
@@ -41,10 +42,11 @@ public class ImportXmlIocContainer {
         // 加载 XML 资源，解析并且生成 BeanDefinition
         beanDefinitionReader.loadBeanDefinitions(xmlResourcePath);
 
-        //通过import导入bean定义
-        IOtherService otherService = beanFactory.getBean(IOtherService.class);
+        // 依赖查找并且创建 Bean
+        ConfigruationService configruationService = beanFactory.getBean(ConfigruationService.class);
 
-        otherService.save("hello spring");
+
+        System.out.println(configruationService.configruation());
 
     }
 }

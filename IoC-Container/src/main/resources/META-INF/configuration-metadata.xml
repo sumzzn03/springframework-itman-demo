@@ -7,7 +7,7 @@
     <!--导入其他bean配置-->
     <import resource="other-metadata.xml"/>
 
-    <bean id="configruationService" class="com.liyong.ioccontainer.ConfigruationService">
+    <bean id="configruationService" class="com.liyong.ioccontainer.service.ConfigruationService">
 
     </bean>
 
