@@ -4,6 +4,8 @@ package com.liyong.ioccontainer.service;
 import com.liyong.ioccontainer.entity.Book;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import javax.annotation.Resource;
+
 /**
  * @author <a href="http://youngitman.tech">青年IT男</a>
  * @version v1.0.0
