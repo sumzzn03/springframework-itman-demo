@@ -9,7 +9,9 @@ package com.liyong.ioccontainer.service;
  * @JunitTest: {@link  }
  * @date 2020-05-06 21:38
  **/
-public class OtherService implements IOtherService {
+public class StaticFactoryMethodService implements IOtherService {
+
+    private static StaticFactoryMethodService otherService = new StaticFactoryMethodService();
 
     @Override
     public void save(String world) {
@@ -17,4 +19,7 @@ public class OtherService implements IOtherService {
     }
 
 
+    public static StaticFactoryMethodService createInstance(){
+        return otherService;
+    }
 }

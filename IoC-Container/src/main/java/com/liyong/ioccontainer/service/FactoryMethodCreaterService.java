@@ -9,12 +9,13 @@ package com.liyong.ioccontainer.service;
  * @JunitTest: {@link  }
  * @date 2020-05-06 21:38
  **/
-public class OtherService implements IOtherService {
+public class FactoryMethodCreaterService {
 
-    @Override
-    public void save(String world) {
-        System.out.println("The OtherService method result is  " + world);
+    private static FactoryMethodService otherService = new FactoryMethodService();
+
+
+    public FactoryMethodService createInstance(){
+
+        return otherService;
     }
-
-
 }

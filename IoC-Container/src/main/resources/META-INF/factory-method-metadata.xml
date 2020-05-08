@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="factoryMethodCreaterService" class="com.liyong.ioccontainer.service.FactoryMethodCreaterService"/>
+
+    <!--通过factoryMethodCreaterServicebean的createInstance创建一个id=factoryMethodService实例对象-->
+    <bean id="factoryMethodService"
+
+          factory-bean="factoryMethodCreaterService"
+
+          factory-method="createInstance">
+
+    </bean>
+
+</beans>
