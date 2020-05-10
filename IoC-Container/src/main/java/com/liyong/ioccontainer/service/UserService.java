@@ -16,7 +16,15 @@ import com.liyong.ioccontainer.entity.User;
 **/
 public class UserService implements IUserService{
 
-    private BookService bookService;
+    public BookService bookService;
+
+    public BookService getBookService() {
+        return bookService;
+    }
+
+    public void setBookService(BookService bookService) {
+        this.bookService = bookService;
+    }
 
     /***
      *
