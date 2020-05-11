@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="otherService" class="com.liyong.ioccontainer.service.OtherService"/>
+
+    <bean id="cNameSpaceService1" class="com.liyong.ioccontainer.service.CNameSpaceService"
+          c:otherService-ref="otherService"
+          c:name="liyong1"
+          c:alias="ouwen1"
+    >
+
+    </bean>
+
+    <bean id="cNameSpaceService2" class="com.liyong.ioccontainer.service.CNameSpaceService">
+        <constructor-arg name="otherService" ref="otherService"/>
+        <constructor-arg name="name" value="liyong2"/>
+        <constructor-arg name="alias" value="ouwen2"/>
+    </bean>
+
+</beans>
