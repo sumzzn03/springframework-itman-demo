@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--集合属性注入-->
+    <bean id="collectionsService" class="com.liyong.ioccontainer.service.CollectionsService">
+        <property name="properties">
+            <props>
+                <prop key="name">ouwen</prop>
+                <prop key="age">18</prop>
+            </props>
+        </property>
+        <property name="names">
+            <list>
+                <value>ouwen</value>
+                <value>liyong</value>
+            </list>
+        </property>
+        <property name="datas">
+            <set>
+                <value>ouwen</value>
+                <value>liyong</value>
+            </set>
+        </property>
+        <property name="maps">
+            <map>
+                <entry key="age" value="18"/>
+                <entry key="name" value="ouwen"/>
+            </map>
+        </property>
+    </bean>
+</beans>
