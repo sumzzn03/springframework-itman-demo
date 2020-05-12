@@ -2,6 +2,7 @@ package com.liyong.ioccontainer.service;
 
 
 import com.liyong.ioccontainer.entity.Book;
+import org.springframework.beans.factory.InitializingBean;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -15,7 +16,7 @@ import java.util.Optional;
  * @JunitTest: {@link  }
  * @date 2020-05-06 21:38
  **/
-public class BookService implements IBookService {
+public class BookService implements IBookService , InitializingBean {
 
     /*** 模拟数据库 */
     private static Map<Long, Book> books = new HashMap<>();
@@ -51,5 +52,9 @@ public class BookService implements IBookService {
         first.ifPresent((id) -> {
             books.put(id, book);
         });
+    }
+    @Override
+    public void afterPropertiesSet() throws Exception {
+        System.out.println("BookService开始初始化");
     }
 }

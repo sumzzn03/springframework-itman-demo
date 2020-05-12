@@ -16,38 +16,38 @@
  */
 package com.liyong.ioccontainer.starter;
 
-import com.liyong.ioccontainer.service.ConfigruationService;
-import org.springframework.beans.factory.support.DefaultListableBeanFactory;
-import org.springframework.beans.factory.xml.XmlBeanDefinitionReader;
+import com.liyong.ioccontainer.service.DependOnService;
+import com.liyong.ioccontainer.service.OtherService;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /***
  *@author <a href="http://youngitman.tech">青年IT男</a>
  *@version v1.0.0
- *@className 通过加载xml中配置的bean元数据
+ *@className 延迟加载
  *@description
  *@JunitTest: {@link  }
  *@date 12:22 AM 2020/5/7
  *
-**/
-public class XmlIocContainer {
+ **/
+public class XmlPrimaryIocContainer {
 
     public static void main(String[] args) {
 
-        DefaultListableBeanFactory beanFactory = new DefaultListableBeanFactory();
+        String xmlResourcePath = "classpath:/META-INF/primary-metadata.xml";
 
-        XmlBeanDefinitionReader beanDefinitionReader = new XmlBeanDefinitionReader(beanFactory);
-
-        String xmlResourcePath = "classpath:/META-INF/configuration-metadata.xml";
-
-        // 加载 XML 资源，解析并且生成 BeanDefinition
-        beanDefinitionReader.loadBeanDefinitions(xmlResourcePath);
+        ClassPathXmlApplicationContext classPathXmlApplicationContext = new ClassPathXmlApplicationContext(xmlResourcePath);
 
 
-        // 依赖查找并且创建 Bean
-        ConfigruationService configruationService = beanFactory.getBean(ConfigruationService.class);
+        classPathXmlApplicationContext.refresh();
 
 
-        System.out.println(configruationService.configruation());
+        System.out.println("=====================请求容器=====================");
+
+
+        //OtherService被容器加载
+        OtherService otherService = classPathXmlApplicationContext.getBean(OtherService.class);
+
+       otherService.save("hello Spring");
 
     }
 }

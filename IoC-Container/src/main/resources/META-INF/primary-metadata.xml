@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--通过类型注入这个bean为首选bean-->
+    <bean id="bookService1" class="com.liyong.ioccontainer.service.BookService" primary="true"/>
+
+    <bean id="bookService2" class="com.liyong.ioccontainer.service.BookService" />
+
+
+</beans>
