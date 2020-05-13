@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="bookService" class="com.liyong.ioccontainer.service.BookService" scope="prototype">
+
+    </bean>
+
+    <bean id="bookManager" class="com.liyong.ioccontainer.service.BookManager">
+        <!--createBookService指定查找方法名称，bookService指定获取的bean -->
+        <lookup-method name="createBookService" bean="bookService"/>
+    </bean>
+
+</beans>
