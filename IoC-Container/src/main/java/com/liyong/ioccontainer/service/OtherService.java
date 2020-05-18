@@ -23,4 +23,5 @@ public class OtherService implements IOtherService, InitializingBean {
     public void afterPropertiesSet() throws Exception {
         System.out.println("OtherService开始初始化");
     }
+
 }
