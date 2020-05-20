@@ -13,6 +13,16 @@ import org.springframework.beans.factory.InitializingBean;
  **/
 public class OtherService implements IOtherService, InitializingBean {
 
+    private String name;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
     @Override
     public void save(String world) {
         System.out.println("The OtherService method result is  " + world);
