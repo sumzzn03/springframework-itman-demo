@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="beanFactoryService" class="com.liyong.ioccontainer.service.BeanFactoryService">
+        <property name="age" value="${test.age}"/>
+    </bean>
+
+    <bean id="myBeanFactoryPostProcessor" class="com.liyong.ioccontainer.service.MyBeanFactoryPostProcessor"/>
+
+    <bean class="org.springframework.context.support.PropertySourcesPlaceholderConfigurer">
+        <property name="locations" value="classpath:config/test.properties"/>
+    </bean>
+
+</beans>
