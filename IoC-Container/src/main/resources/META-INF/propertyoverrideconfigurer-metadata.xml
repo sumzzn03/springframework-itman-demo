@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        https://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!--第一：指定资源文件路径 不能同时存在-->
+    <context:property-override location="classpath:config/override.properties"/>
+
+    <bean id="beanFactoryService" class="com.liyong.ioccontainer.service.BeanFactoryService">
+        <property name="path" value="defalut"/>
+    </bean>
+
+<!--    <bean class="org.springframework.beans.factory.config.PropertyOverrideConfigurer">-->
+<!--        &lt;!&ndash;第二：指定资源文件路径&ndash;&gt;-->
+<!--        <property name="locations" value="classpath:config/override.properties"/>-->
+<!--    </bean>-->
+<!--    <bean id="beanFactoryService" class="com.liyong.ioccontainer.service.BeanFactoryService">-->
+<!--        <property name="path" value="defalut"/>-->
+<!--    </bean>-->
+
+
+</beans>

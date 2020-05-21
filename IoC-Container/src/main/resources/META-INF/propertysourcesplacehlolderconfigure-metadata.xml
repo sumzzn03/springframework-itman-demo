@@ -11,19 +11,18 @@
     <context:property-placeholder location="classpath:config/other.properties"/>
 
     <bean id="beanFactoryService" class="com.liyong.ioccontainer.service.BeanFactoryService">
-        <property name="path" value="${test.path}"/>
+        <property name="age" value="${test.age}"/>
+        <property name="name" value="${test.name}"/>
     </bean>
 
-    <!--    <bean class="org.springframework.context.support.PropertySourcesPlaceholderConfigurer">-->
-    <!--        &lt;!&ndash;第二：指定资源文件路径&ndash;&gt;-->
-    <!--        <property name="locations" value="classpath:config/test.properties"/>-->
-    <!--    </bean>-->
-    <!--    <bean id="beanFactoryService" class="com.liyong.ioccontainer.service.BeanFactoryService">-->
-    <!--        <property name="age" value="${test.age}"/>-->
-    <!--    </bean>-->
-
-
-    <bean id="myBeanFactoryPostProcessor" class="com.liyong.ioccontainer.service.MyBeanFactoryPostProcessor"/>
+    <!--        <bean class="org.springframework.context.support.PropertySourcesPlaceholderConfigurer">-->
+    <!--            &lt;!&ndash;第二：指定资源文件路径&ndash;&gt;-->
+    <!--            <property name="locations" value="classpath:config/other.properties"/>-->
+    <!--        </bean>-->
+    <!--        <bean id="beanFactoryService" class="com.liyong.ioccontainer.service.BeanFactoryService">-->
+    <!--            <property name="age" value="${test.age}"/>-->
+    <!--            <property name="name" value="${test.name}"/>-->
+    <!--        </bean>-->
 
 
 </beans>
