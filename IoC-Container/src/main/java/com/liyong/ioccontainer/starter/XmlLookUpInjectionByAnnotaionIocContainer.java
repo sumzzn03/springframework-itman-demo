@@ -27,7 +27,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
  *@author <a href="http://youngitman.tech">青年IT男</a>
  *@version v1.0.0
  *@className 通过加载xml中配置的bean元数据
- *@description
+ *@DESCRIPTION
  *@JunitTest: {@link  }
  *@date 12:22 AM 2020/5/7
  *

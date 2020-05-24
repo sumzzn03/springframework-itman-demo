@@ -4,6 +4,11 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
         https://www.springframework.org/schema/beans/spring-beans.xsd">
 
+
+    <bean id="lifecycleService2" class="com.liyong.ioccontainer.service.LifecycleService2">
+
+    </bean>
+
     <bean id="lifecycleService" class="com.liyong.ioccontainer.service.LifecycleService">
 
     </bean>

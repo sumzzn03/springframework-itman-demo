@@ -16,11 +16,8 @@
  */
 package com.liyong.ioccontainer.starter;
 
-import com.liyong.ioccontainer.service.BookService;
 import com.liyong.ioccontainer.service.DependOnService;
 import com.liyong.ioccontainer.service.OtherService;
-import org.springframework.beans.factory.support.DefaultListableBeanFactory;
-import org.springframework.beans.factory.xml.XmlBeanDefinitionReader;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /***
