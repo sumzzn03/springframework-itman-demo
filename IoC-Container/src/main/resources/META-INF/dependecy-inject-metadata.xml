@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="movieFinder" class="com.liyong.ioccontainer.service.annotationbase.MovieFinder"/>
+
+    <bean id="simpleMovieLister" class="com.liyong.ioccontainer.service.dependencyinject.SimpleMovieLister">
+        <constructor-arg name="movieFinder">
+            <ref bean="movieFinder"/>
+        </constructor-arg>
+    </bean>
+
+    <bean id="thingTwo" class="com.liyong.ioccontainer.service.dependencyinject.ThingTwo"/>
+    <bean id="thingThree" class="com.liyong.ioccontainer.service.dependencyinject.ThingThree"/>
+
+    <bean id="thingOne" class="com.liyong.ioccontainer.service.dependencyinject.ThingOne">
+        <constructor-arg name="thingTwo">
+            <ref bean="thingTwo"/>
+        </constructor-arg>
+        <constructor-arg name="thingThree">
+            <ref bean="thingThree"/>
+        </constructor-arg>
+    </bean>
+
+    <bean id="exampleBeanByName" class="com.liyong.ioccontainer.service.dependencyinject.ExampleBean">
+        <constructor-arg name="ultimateAnswer" value="query"/>
+        <constructor-arg name="years" value="10"/>
+    </bean>
+
+    <bean id="exampleBeanByType" class="com.liyong.ioccontainer.service.dependencyinject.ExampleBean">
+        <constructor-arg type="int" value="7500000"/>
+        <constructor-arg type="java.lang.String" value="42"/>
+    </bean>
+    <bean id="exampleBeanByIndex" class="com.liyong.ioccontainer.service.dependencyinject.ExampleBean">
+        <!--指定第一个参数-->
+        <constructor-arg index="0" value="7500000"/>
+        <!--指定第二个参数-->
+        <constructor-arg index="1" value="42"/>
+    </bean>
+
+    <bean id="simpleMovieLister2" class="com.liyong.ioccontainer.service.dependencyinject.SimpleMovieLister2">
+        <property name="movieFinder" ref="movieFinder"/>
+    </bean>
+
+    <bean id="exampleBean2" class="com.liyong.ioccontainer.service.dependencyinject.ExampleBean2" factory-method="createInstance">
+        <constructor-arg ref="anotherExampleBean"/>
+        <constructor-arg ref="yetAnotherBean"/>
+        <constructor-arg value="1"/>
+    </bean>
+
+    <bean id="anotherExampleBean" class="com.liyong.ioccontainer.service.dependencyinject.AnotherBean"/>
+    <bean id="yetAnotherBean" class="com.liyong.ioccontainer.service.dependencyinject.YetAnotherBean"/>
+
+</beans>
