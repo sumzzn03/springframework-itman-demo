@@ -1,0 +1,3 @@
+本书编写主要目的在于翻译官方`spring.io`关于`SpringFramework`模块文档，但是本书不仅仅是简单的翻译，我会根据相应的模块给出一些代码的操作实践以及给出相应的源码分析，`SpringFramework`文档我个人认为在所有开源框架中算是写得最好的了，**But**如果对于初学者或者是实践经验较少的小伙伴来说还是比较困难的这里不仅仅是文档全是英文形式而且根据文档的概述是比较难理解和应用到实践项目开发中，这里需要开发人员积累了相应的项目实践经验才行。**So**我在翻译`SpringFramework`过程中会不断编写相应的示例代码、结合文档和源码分析达到更好的理解。在后面的书中我可能会翻译现在比较流行的微服务框架`SpringBoot` 、`SpringCloud`以及Spring的其他模块比如:`SpringData`、`SpringSession`、`SpringSecurity`  等，`SpringFramework`在整个Spring体系中起着**基石**的作用，`SpringBoot`基于`SpringFramework`进行了相应的拓展包括：`自动化配置`、`外部化配置`、`组件化(start模式)`等，而`SpringCloud`基于`SpringBoot`对整个微服务体系的服务治理、服务注册发现、统一配置中心等做了相关的集成和统一相关的抽象例如： `Spring Cloud Commons`等。
+
+正在翻译中... 尽情期待！！！
