@@ -16,13 +16,10 @@
  */
 package com.liyong.ioccontainer.starter;
 
-import com.liyong.ioccontainer.entity.User;
-import com.liyong.ioccontainer.inner.ThreadLocalScope;
+import com.liyong.ioccontainer.service.beanscope.SimpleUserService;
+import com.liyong.ioccontainer.service.beanscope.UserPreferences;
 import org.springframework.beans.factory.xml.XmlBeanDefinitionReader;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Scope;
-import org.springframework.context.support.SimpleThreadScope;
 
 import java.io.IOException;
 
@@ -35,51 +32,40 @@ import java.io.IOException;
  *@date 12:22 AM 2020/5/7
  *
  **/
-public class XmlCustomScopeIocContainer {
+public class XmlBeanScopeIocContainer {
 
 
-    @Scope(ThreadLocalScope.SCOPE_NAME)
-    @Bean
-    public User user() {
-        User user = new User();
-
-        user.setId(1L);
-        user.setAge(18);
-        user.setName("ouwen");
-
-        return user;
-    }
 
     public static void main(String[] args) throws IOException {
 
-        String xmlResourcePath = "classpath:/META-INF/custom-bean-scope-metadata.xml";
+        String xmlResourcePath = "classpath:/META-INF/bean-scope-metadata.xml";
 
         // 创建 BeanFactory 容器
         AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext();
         // 注册 Configuration Class（配置类） -> Spring Bean
-        applicationContext.register(XmlCustomScopeIocContainer.class);
+        applicationContext.register(XmlBeanScopeIocContainer.class);
 
         XmlBeanDefinitionReader beanDefinitionReader = new XmlBeanDefinitionReader(applicationContext);
 
         // 加载 XML 资源，解析并且生成 BeanDefinition
         beanDefinitionReader.loadBeanDefinitions(xmlResourcePath);
 
-
-        //编程式注入
-//        org.springframework.beans.factory.config.Scope threadScope = new ThreadLocalScope();
-//        applicationContext.getBeanFactory().registerScope("thread", threadScope);
-
         // 启动 Spring 应用上下文
         applicationContext.refresh();
 
-        for (int i = 0; i < 10; i++) {
-            new Thread(() -> {
-                User user = applicationContext.getBean(User.class);
-                System.out.println(user.hashCode());
-            }).start();
-        }
 
-        System.in.read();
+        SimpleUserService simpleUserService = applicationContext.getBean(SimpleUserService.class);
+
+        //需要在Web环境下获取
+        //UserPreferences userPreferences = applicationContext.getBean("userPreferences2", UserPreferences.class);
+
+
+        System.out.println(simpleUserService);
+        //System.out.println(userPreferences);
+
+
+
+
 
     }
 }

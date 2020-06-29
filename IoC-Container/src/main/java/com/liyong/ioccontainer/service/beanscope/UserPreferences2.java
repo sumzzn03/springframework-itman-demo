@@ -1,0 +1,19 @@
+package com.liyong.ioccontainer.service.beanscope;
+
+import org.springframework.stereotype.Component;
+import org.springframework.web.context.annotation.SessionScope;
+
+/**
+ *@author <a href="http://youngitman.tech">青年IT男</a>
+ *@version v1.0.0
+ *@className UserPreferences
+ *@description
+ *@JunitTest: {@link  } 
+ *@date 2020-06-29 23:19    
+ *
+ *
+**/
+@SessionScope
+@Component
+public class UserPreferences2 {
+}

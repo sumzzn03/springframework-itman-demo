@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/aop
+        https://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <bean id="loginAction" class="com.liyong.ioccontainer.service.beanscope.LoginAction" scope="request"/>
+
+    <bean id="userPreferences" class="com.liyong.ioccontainer.service.beanscope.UserPreferences" scope="session"/>
+
+    <bean id="appPreferences" class="com.liyong.ioccontainer.service.beanscope.AppPreferences" scope="application"/>
+
+    <!-- 一个HTTP Session作用域的bean暴露为一个代理 -->
+    <bean id="userPreferences2" class="com.liyong.ioccontainer.service.beanscope.UserPreferences" scope="session">
+        <!-- 指示容器代理周围的bean -->
+        <aop:scoped-proxy/>
+        <!--基于接口代理-->
+<!--        <aop:scoped-proxy proxy-target-class="false"/>-->
+    </bean>
+
+    <!-- 一个单例作用域bean 被注入一个上面的代理bean -->
+    <bean id="userService" class="com.liyong.ioccontainer.service.beanscope.SimpleUserService">
+        <!-- a reference to the proxied userPreferences bean -->
+        <property name="userPreferences" ref="userPreferences2"/>
+    </bean>
+
+</beans>
