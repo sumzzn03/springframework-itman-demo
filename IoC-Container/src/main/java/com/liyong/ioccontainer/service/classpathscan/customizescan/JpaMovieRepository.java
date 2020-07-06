@@ -1,4 +1,4 @@
-package com.liyong.ioccontainer.service.classpathscan;
+package com.liyong.ioccontainer.service.classpathscan.customizescan;
 
 import org.springframework.stereotype.Repository;
 

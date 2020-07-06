@@ -16,8 +16,8 @@
  */
 package com.liyong.ioccontainer.starter;
 
-import com.liyong.ioccontainer.service.classpathscan.AutoCheckAndRegisterBeanDefinitionAppConfig;
-import com.liyong.ioccontainer.service.classpathscan.SimpleMovieLister;
+import com.liyong.ioccontainer.service.classpathscan.NameGeneratorAppConfig;
+import com.liyong.ioccontainer.service.classpathscan.namegenerator.SimpleMovieLister;
 import org.springframework.beans.factory.support.BeanDefinitionReader;
 import org.springframework.beans.factory.xml.XmlBeanDefinitionReader;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -69,7 +69,7 @@ public class AutoCheckAndRegisterBeanDefinitionIocContainer {
         // 创建 BeanFactory 容器
         AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext();
         // 注册 Configuration Class（配置类） -> Spring Bean
-        applicationContext.register(AutoCheckAndRegisterBeanDefinitionAppConfig.class);
+        applicationContext.register(NameGeneratorAppConfig.class);
 
         applicationContext.refresh();
 

@@ -15,13 +15,11 @@ import org.springframework.stereotype.Repository;
  *
  *
 **/
-
 @Configuration
-@ComponentScan(basePackages = "com.liyong.ioccontainer.service.classpathscan",
+@ComponentScan(basePackages = "com.liyong.ioccontainer.service.classpathscan.customizescan",
         includeFilters = @ComponentScan.Filter(type = FilterType.REGEX, pattern = ".*.*Repository"),
         excludeFilters = @ComponentScan.Filter(Repository.class))
-public class CustomizeScanByFilterAppConfig {
-
+public class CustomizeScanAppConfig {
 
 
 }

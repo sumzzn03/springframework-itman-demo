@@ -16,8 +16,10 @@
  */
 package com.liyong.ioccontainer.starter;
 
-import com.liyong.ioccontainer.service.classpathscan.CustomizeScanByFilterAppConfig;
-import com.liyong.ioccontainer.service.classpathscan.JpaMovieRepository;
+import com.liyong.ioccontainer.service.classpathscan.CustomizeScanAppConfig;
+import com.liyong.ioccontainer.service.classpathscan.NameGeneratorAppConfig;
+import com.liyong.ioccontainer.service.classpathscan.customizescan.MybatisMovieRepository;
+import com.liyong.ioccontainer.service.classpathscan.namegenerator.JpaMovieRepository;
 import org.springframework.beans.factory.support.BeanDefinitionReader;
 import org.springframework.beans.factory.xml.XmlBeanDefinitionReader;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -57,9 +59,9 @@ public class CustomizeScanByFilterIocContainer {
 
         applicationContext.refresh();
 
-        JpaMovieRepository jpaMovieRepository = applicationContext.getBean(JpaMovieRepository.class);
+        MybatisMovieRepository mybatisMovieRepository = applicationContext.getBean(MybatisMovieRepository.class);
 
-        System.out.println(jpaMovieRepository);
+        System.out.println(mybatisMovieRepository);
 
     }
 
@@ -68,13 +70,13 @@ public class CustomizeScanByFilterIocContainer {
         // 创建 BeanFactory 容器
         AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext();
         // 注册 Configuration Class（配置类） -> Spring Bean
-        applicationContext.register(CustomizeScanByFilterAppConfig.class);
+        applicationContext.register(CustomizeScanAppConfig.class);
 
         applicationContext.refresh();
 
-        JpaMovieRepository jpaMovieRepository = applicationContext.getBean(JpaMovieRepository.class);
+        MybatisMovieRepository mybatisMovieRepository = applicationContext.getBean(MybatisMovieRepository.class);
 
-        System.out.println(jpaMovieRepository);
+        System.out.println(mybatisMovieRepository);
 
     }
 

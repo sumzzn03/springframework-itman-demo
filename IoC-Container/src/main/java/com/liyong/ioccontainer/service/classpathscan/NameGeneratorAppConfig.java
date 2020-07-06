@@ -1,5 +1,6 @@
 package com.liyong.ioccontainer.service.classpathscan;
 
+import com.liyong.ioccontainer.service.classpathscan.namegenerator.MyBeanNameGenerator;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
@@ -14,10 +15,9 @@ import org.springframework.context.annotation.Configuration;
  *
 **/
 @Configuration
-@ComponentScan(basePackages = "com.liyong.ioccontainer.service.classpathscan")
-public class AutoCheckAndRegisterBeanDefinitionAppConfig {
-
-
+@ComponentScan(basePackages = "com.liyong.ioccontainer.service.classpathscan.namegenerator",
+        nameGenerator = MyBeanNameGenerator.class)
+public class NameGeneratorAppConfig {
 
 
 }
