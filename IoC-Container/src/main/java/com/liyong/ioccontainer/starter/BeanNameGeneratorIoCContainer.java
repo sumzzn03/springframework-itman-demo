@@ -21,7 +21,7 @@ public class BeanNameGeneratorIoCContainer {
 
         baseXml();
 
-        //baseAnnotation();
+        baseAnnotation();
 
     }
 
@@ -43,7 +43,7 @@ public class BeanNameGeneratorIoCContainer {
 
         String[] beanNamesForType = applicationContext.getBeanNamesForType(SimpleMovieLister.class);
 
-        Arrays.stream(beanNamesForType).forEach(System.out::print);
+        Arrays.stream(beanNamesForType).forEach(System.out::println);
 
     }
 
@@ -58,7 +58,7 @@ public class BeanNameGeneratorIoCContainer {
 
         String[] beanNamesForType = applicationContext.getBeanNamesForType(SimpleMovieLister.class);
 
-        Arrays.stream(beanNamesForType).forEach(System.out::print);
+        Arrays.stream(beanNamesForType).forEach(System.out::println);
 
     }
 
