@@ -17,7 +17,7 @@ import org.springframework.stereotype.Repository;
 **/
 @Configuration
 @ComponentScan(basePackages = "com.liyong.ioccontainer.service.classpathscan.metadataqualifier")
-public class MetaDataAuqlifierAppConfig {
+public class MetaDataQualifierAppConfig {
 
 
 }

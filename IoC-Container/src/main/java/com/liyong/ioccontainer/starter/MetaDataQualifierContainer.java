@@ -1,11 +1,8 @@
 package com.liyong.ioccontainer.starter;
 
-import com.liyong.ioccontainer.service.classpathscan.MetaDataAuqlifierAppConfig;
+import com.liyong.ioccontainer.service.classpathscan.MetaDataQualifierAppConfig;
 import com.liyong.ioccontainer.service.classpathscan.metadataqualifier.MyActionService;
-import com.liyong.ioccontainer.service.classpathscan.namegenerator.SimpleMovieLister;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-
-import java.util.Arrays;
 
 /**
  * @author <a href="http://youngitman.tech">青年IT男</a>
@@ -21,7 +18,7 @@ public class MetaDataQualifierContainer {
 
         AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext();
         // 注册 Configuration Class（配置类） -> Spring Bean
-        applicationContext.register(MetaDataAuqlifierAppConfig.class);
+        applicationContext.register(MetaDataQualifierAppConfig.class);
 
         // 启动 Spring 应用上下文
         applicationContext.refresh();
