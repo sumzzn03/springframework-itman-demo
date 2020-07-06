@@ -15,7 +15,7 @@ import java.util.Arrays;
  * @JunitTest: {@link  }
  * @date 2020-05-06 21:28
  **/
-public class BeanNameGeneratorIoCContainer {
+public class BeanNameGeneratorIocContainer {
 
     public static void main(String[] args) {
 
@@ -29,7 +29,7 @@ public class BeanNameGeneratorIoCContainer {
 
         AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext();
         // 注册 Configuration Class（配置类） -> Spring Bean
-        applicationContext.register(BeanNameGeneratorIoCContainer.class);
+        applicationContext.register(BeanNameGeneratorIocContainer.class);
 
         XmlBeanDefinitionReader beanDefinitionReader = new XmlBeanDefinitionReader(applicationContext);
 

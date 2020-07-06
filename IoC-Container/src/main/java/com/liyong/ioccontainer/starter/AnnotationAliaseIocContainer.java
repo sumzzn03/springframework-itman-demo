@@ -15,13 +15,13 @@ import org.springframework.context.annotation.Configuration;
  * @date 2020-05-06 21:28
  **/
 @Configuration
-public class AnnotationAliaseIoCContainer {
+public class AnnotationAliaseIocContainer {
     public static void main(String[] args) {
 
         AnnotationConfigApplicationContext annotationConfigApplicationContext = new AnnotationConfigApplicationContext();
 
         //注册bean到容器中
-        annotationConfigApplicationContext.register(AnnotationAliaseIoCContainer.class);
+        annotationConfigApplicationContext.register(AnnotationAliaseIocContainer.class);
 
         //启动容器
         annotationConfigApplicationContext.refresh();
