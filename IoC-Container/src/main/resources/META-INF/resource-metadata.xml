@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="resourceService" class="com.liyong.ioccontainer.service.resource.ResourceService">
+        <property name="resource1" value="config/app.properties"/>
+        <property name="resource2" value="classpath:config/app.properties"/>
+        <property name="resource3" value="file:///Users/liyong/work/code/SpringFramework5.2.6/IoC-Container/src/main/resources/config/app.properties"/>
+    </bean>
+
+
+</beans>
