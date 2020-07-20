@@ -10,7 +10,7 @@ package com.liyong.ioccontainer.service.aop.regexpmethodpointcutadvisor;
  *
 **/
 
-import com.ouwen.springboot.aop.LogMethodAdvice;
+import com.liyong.ioccontainer.service.aop.LogMethodAdvice;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -18,12 +18,12 @@ import org.springframework.context.annotation.Configuration;
 public  class Config{
 
     @Bean
-    public com.ouwen.springboot.aop.LogMethodAdvice logMethodAdvice(){
-        return new com.ouwen.springboot.aop.LogMethodAdvice();
+    public LogMethodAdvice logMethodAdvice(){
+        return new LogMethodAdvice();
     }
 
     @Bean
-    public CustomRegexpMethodPointcutAdvisor customRegexpMethodPointcutAdvisor(com.ouwen.springboot.aop.LogMethodAdvice logMethodAdvice){
+    public CustomRegexpMethodPointcutAdvisor customRegexpMethodPointcutAdvisor(LogMethodAdvice logMethodAdvice){
         return new CustomRegexpMethodPointcutAdvisor(logMethodAdvice,new String[]{".*set.*",".*get.*"});
     }
 
