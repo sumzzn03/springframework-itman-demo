@@ -12,8 +12,10 @@
 
     <bean id="myService" class="com.liyong.ioccontainer.service.schema.MyServiceImpl">
         <property name="format">
-            <!-- as an inner bean -->
-            <myns:dateformat pattern="HH:mm MM-dd-yyyy"/>
+            <!-- 作为内部bean -->
+<!--            <myns:dateformat pattern="HH:mm MM-dd-yyyy"/>-->
+            <!--应用外部bean-->
+            <ref bean="defaultDateFormat"/>
         </property>
     </bean>
 
