@@ -12,6 +12,7 @@
     <modules>
         <module>IoC-Container</module>
         <module>Data-Access</module>
+        <module>Testing</module>
     </modules>
 
     <name>SpringFramework5.2.7</name>
@@ -29,19 +30,19 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
-            <version>5.2.6.RELEASE</version>
+            <version>5.2.7.RELEASE</version>
         </dependency>
 
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-web</artifactId>
-            <version>5.2.5.RELEASE</version>
+            <version>5.2.7.RELEASE</version>
         </dependency>
 
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-webmvc</artifactId>
-            <version>5.2.5.RELEASE</version>
+            <version>5.2.7.RELEASE</version>
         </dependency>
 
         <dependency>
@@ -106,6 +107,7 @@
             <artifactId>druid</artifactId>
             <version>1.0.20</version>
         </dependency>
+
     </dependencies>
 
     <build>
