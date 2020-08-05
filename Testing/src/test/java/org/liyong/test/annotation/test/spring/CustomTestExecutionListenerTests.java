@@ -3,8 +3,13 @@ package org.liyong.test.annotation.test.spring;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.liyong.test.annotation.test.spring.annotation.test.spring.PersionService;
+import org.springframework.context.event.EventListener;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.TestExecutionListeners;
+import org.springframework.test.context.event.AfterTestClassEvent;
+import org.springframework.test.context.event.BeforeTestClassEvent;
+import org.springframework.test.context.event.annotation.AfterTestClass;
+import org.springframework.test.context.event.annotation.BeforeTestClass;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import javax.annotation.Resource;
@@ -32,5 +37,6 @@ public class CustomTestExecutionListenerTests {
         persionService.say("liyong");
 
     }
+
 
 }

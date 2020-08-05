@@ -1,7 +1,6 @@
 package org.liyong.test.annotation.test.spring;
 
 import org.springframework.test.context.TestContext;
-import org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener;
 import org.springframework.test.context.support.AbstractTestExecutionListener;
 
 /**

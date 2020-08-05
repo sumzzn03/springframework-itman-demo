@@ -14,11 +14,12 @@ import org.springframework.context.annotation.Configuration;
  *
 **/
 @Configuration
-public class AppConfig {
+public class AppConfig{
 
     @Bean
     public OtherService otherService(){
         return new OtherServiceImpl();
     }
+
 
 }
