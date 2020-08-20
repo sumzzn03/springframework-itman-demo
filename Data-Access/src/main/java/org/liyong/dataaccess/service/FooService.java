@@ -1,6 +1,7 @@
-package org.liyong.dataaccess.service.transaction;
+package org.liyong.dataaccess.service;
 
-import org.liyong.dataaccess.entity.transaction.Foo;
+
+import org.liyong.dataaccess.entity.Foo;
 
 public interface FooService {
 

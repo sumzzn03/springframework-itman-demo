@@ -1,4 +1,4 @@
-package org.liyong.dataaccess.entity.transaction;
+package org.liyong.dataaccess.entity;
 /**
  *@author <a href="http://youngitman.tech">青年IT男</a>
  *@version v1.0.0

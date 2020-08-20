@@ -16,12 +16,10 @@
  */
 package org.liyong.dataaccess.starter;
 
-import org.liyong.dataaccess.entity.transaction.Foo;
-import org.liyong.dataaccess.service.transaction.FooService;
+import org.liyong.dataaccess.entity.Foo;
+import org.liyong.dataaccess.service.FooService;
 import org.springframework.beans.factory.xml.XmlBeanDefinitionReader;
-import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /***
  *@author <a href="http://youngitman.tech">青年IT男</a>
