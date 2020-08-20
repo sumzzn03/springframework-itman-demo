@@ -12,13 +12,16 @@
         https://www.springframework.org/schema/aop/spring-aop.xsd">
 
     <bean id="fooService" class="org.liyong.dataaccess.service.DefaultFooService">
-
+        <constructor-arg index="0" ref="jdbcTemplate"/>
     </bean>
 
     <!--配置通知-->
     <tx:advice id="txAdvice" transaction-manager="txManager">
         <tx:attributes>
-            <tx:method name="get*" read-only="true"/>
+            <!--抛出InstrumentNotFoundException异常不会回滚-->
+            <tx:method name="get*" read-only="true" no-rollback-for="NoProductInStockException"/>
+            <!--抛出NoProductInStockException异常会回滚-->
+            <tx:method name="insertFoo" rollback-for="InstrumentNotFoundException"/>
             <tx:method name="*"/>
         </tx:attributes>
     </tx:advice>
@@ -31,7 +34,7 @@
 
     <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" destroy-method="close">
         <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
-        <property name="url" value="jdbc:mysql://127.0.0.1:3306/test"/>
+        <property name="url" value="jdbc:mysql://127.0.0.1:3306/test_transaction"/>
         <property name="username" value="root"/>
         <property name="password" value="123456"/>
     </bean>
@@ -39,6 +42,11 @@
     <!--事物关联和数据源关联-->
     <bean id="txManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
         <property name="dataSource" ref="dataSource"/>
+    </bean>
+
+    <!--jdbcTemplate-->
+    <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+        <constructor-arg index="0" ref="dataSource"/>
     </bean>
 
 </beans>

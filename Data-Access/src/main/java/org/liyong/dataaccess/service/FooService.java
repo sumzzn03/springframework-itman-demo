@@ -13,4 +13,6 @@ public interface FooService {
 
     void updateFoo(Foo foo);
 
+    void updateStock(Foo foo);
+
 }

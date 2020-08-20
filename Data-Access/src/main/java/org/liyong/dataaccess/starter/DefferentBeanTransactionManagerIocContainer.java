@@ -18,28 +18,31 @@ package org.liyong.dataaccess.starter;
 
 import org.liyong.dataaccess.entity.Foo;
 import org.liyong.dataaccess.service.FooService;
+import org.liyong.dataaccess.service.ServiceOperation;
+import org.liyong.dataaccess.service.notx.NoTxServiceOperation;
+import org.liyong.dataaccess.service.tx.DefaultServiceOperation;
 import org.springframework.beans.factory.xml.XmlBeanDefinitionReader;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 /***
  *@author <a href="http://youngitman.tech">青年IT男</a>
  *@version v1.0.0
- *@className 通过加载xml中配置的bean元数据
+ *@className 为不同bean配置不同事物语义
  *@description
  *@JunitTest: {@link  }
  *@date 12:22 AM 2020/5/7
  *
  **/
-public class DeclarativeTransactionManagerIocContainer {
+public class DefferentBeanTransactionManagerIocContainer {
 
     public static void main(String[] args) {
 
-        String xmlResourcePath = "classpath:/META-INF/declarative-transaction-manager-metadata.xml";
+        String xmlResourcePath = "classpath:/META-INF/defferent-transaction-manager-metadata.xml";
 
         // 创建 BeanFactory 容器
         AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext();
         // 注册 Configuration Class（配置类） -> Spring Bean
-        applicationContext.register(DeclarativeTransactionManagerIocContainer.class);
+        applicationContext.register(DefferentBeanTransactionManagerIocContainer.class);
 
         XmlBeanDefinitionReader beanDefinitionReader = new XmlBeanDefinitionReader(applicationContext);
 
@@ -49,9 +52,13 @@ public class DeclarativeTransactionManagerIocContainer {
         // 启动 Spring 应用上下文
         applicationContext.refresh();
 
-        FooService fooService = (FooService) applicationContext.getBean("fooService");
+        ServiceOperation noTxServiceOperation = (ServiceOperation) applicationContext.getBean("noTxServiceOperation");
 
-        fooService.insertFoo (new Foo("ouwen","liyong",10));
+        noTxServiceOperation.insertFoo (new Foo("ouwen","liyong",10));
+
+        ServiceOperation defaultServiceOperation = (ServiceOperation) applicationContext.getBean("defaultServiceOperation");
+
+        defaultServiceOperation.insertFoo (new Foo("ouwen","liyong",20));
 
         applicationContext.close();
 

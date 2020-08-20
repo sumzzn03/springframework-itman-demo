@@ -24,22 +24,22 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 /***
  *@author <a href="http://youngitman.tech">青年IT男</a>
  *@version v1.0.0
- *@className 通过加载xml中配置的bean元数据
+ *@className 回滚声明式事物
  *@description
  *@JunitTest: {@link  }
  *@date 12:22 AM 2020/5/7
  *
  **/
-public class DeclarativeTransactionManagerIocContainer {
+public class RollBackDeclarativeTransactionManagerIocContainer {
 
     public static void main(String[] args) {
 
-        String xmlResourcePath = "classpath:/META-INF/declarative-transaction-manager-metadata.xml";
+        String xmlResourcePath = "classpath:/META-INF/rollback-declarative-transaction-manager-metadata.xml";
 
         // 创建 BeanFactory 容器
         AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext();
         // 注册 Configuration Class（配置类） -> Spring Bean
-        applicationContext.register(DeclarativeTransactionManagerIocContainer.class);
+        applicationContext.register(RollBackDeclarativeTransactionManagerIocContainer.class);
 
         XmlBeanDefinitionReader beanDefinitionReader = new XmlBeanDefinitionReader(applicationContext);
 
