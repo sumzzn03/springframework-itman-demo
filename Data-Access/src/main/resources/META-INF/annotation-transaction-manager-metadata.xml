@@ -23,7 +23,7 @@
         <constructor-arg index="0" ref="dataSource"/>
     </bean>
 
-    <tx:annotation-driven transaction-manager="txManager"/>
+    <tx:annotation-driven transaction-manager="txManager" proxy-target-class="false"/>
 
     <bean id="txManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
         <!-- (this dependency is defined somewhere else) -->

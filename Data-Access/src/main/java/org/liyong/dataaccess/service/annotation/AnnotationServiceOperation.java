@@ -4,6 +4,7 @@ import org.liyong.dataaccess.entity.Foo;
 import org.liyong.dataaccess.exception.InstrumentNotFoundException;
 import org.liyong.dataaccess.service.ServiceOperation;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 /**
@@ -24,7 +25,7 @@ public class AnnotationServiceOperation implements ServiceOperation {
         this.jdbcTemplate = jdbcTemplate;
     }
 
-    @Transactional
+    @Transactional(propagation = Propagation.REQUIRED)
     @Override
     public void insertFoo(Foo foo) {
 
@@ -39,7 +40,7 @@ public class AnnotationServiceOperation implements ServiceOperation {
 
         jdbcTemplate.update("insert into stock(name,age) values (?, ?)",foo.getFooName(),foo.getAge());
 
-        throw new RuntimeException("此异常事物会不回滚");
+        throw new RuntimeException("此异常事物会回滚");
 
     }
 }
