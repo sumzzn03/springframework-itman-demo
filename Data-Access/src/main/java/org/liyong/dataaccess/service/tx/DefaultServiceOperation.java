@@ -25,6 +25,6 @@ public class DefaultServiceOperation implements ServiceOperation {
     @Override
     public void insertFoo(Foo foo) {
         jdbcTemplate.update("insert into stock(name,age) values (?, ?)",foo.getFooName(),foo.getAge());
-
+        throw new RuntimeException("此异常事物会回滚");
     }
 }

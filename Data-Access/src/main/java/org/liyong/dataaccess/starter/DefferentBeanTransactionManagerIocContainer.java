@@ -54,11 +54,18 @@ public class DefferentBeanTransactionManagerIocContainer {
 
         ServiceOperation noTxServiceOperation = (ServiceOperation) applicationContext.getBean("noTxServiceOperation");
 
-        noTxServiceOperation.insertFoo (new Foo("ouwen","liyong",10));
+        try {
+            //数据正常插入
+            noTxServiceOperation.insertFoo (new Foo("ouwen","liyong",10));
+
+        }catch (Exception e){}
 
         ServiceOperation defaultServiceOperation = (ServiceOperation) applicationContext.getBean("defaultServiceOperation");
 
-        defaultServiceOperation.insertFoo (new Foo("ouwen","liyong",20));
+        try {
+            //数据不会插入
+            defaultServiceOperation.insertFoo (new Foo("ouwen","liyong",20));
+        }catch (Exception e){}
 
         applicationContext.close();
 

@@ -26,5 +26,6 @@ public class NoTxServiceOperation implements ServiceOperation {
     public void insertFoo(Foo foo) {
         jdbcTemplate.update("insert into stock(name,age) values (?, ?)",foo.getFooName(),foo.getAge());
 
+        throw new RuntimeException("此异常事物不会回滚");
     }
 }
