@@ -28,4 +28,9 @@ public class NoTxServiceOperation implements ServiceOperation {
 
         throw new RuntimeException("此异常事物不会回滚");
     }
+
+    @Override
+    public void insertFoo2(Foo foo) {
+
+    }
 }
