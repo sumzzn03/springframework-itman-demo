@@ -45,4 +45,13 @@ public class Foo {
     public void setBarName(String barName) {
         this.barName = barName;
     }
+
+    @Override
+    public String toString() {
+        return "Foo{" +
+                "fooName='" + fooName + '\'' +
+                ", barName='" + barName + '\'' +
+                ", age=" + age +
+                '}';
+    }
 }
