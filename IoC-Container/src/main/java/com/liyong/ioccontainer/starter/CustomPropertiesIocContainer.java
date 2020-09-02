@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Configuration;
 /**
  * @author <a href="http://youngitman.tech">青年IT男</a>
  * @version v1.0.0
- * @className IoCContainer
+ * @className CustomPropertiesIocContainer
  * @description 自定义环境变量加载 启动系统参数增加：-Dspring.profiles.active=dev 来切换环境变量
  * @JunitTest: {@link  }
  * @date 2020-05-06 21:28
